@@ -25,7 +25,7 @@ const Slider = () => {
 
   const autoScroll = true;
   let slideInterval;
-  let intervalTime = 5000;
+  let intervalTime = 8000;
 
   const nextSlide = () => {
     setCurrentSlide(currentSlide === slideLength - 1 ? 0 : currentSlide + 1);
@@ -64,30 +64,68 @@ const Slider = () => {
           >
             {index === currentSlide && (
               <div className="container">
-                <img src={slide.image} alt="slide" className="image" />
-                <div className="content">
+                <motion.img
+                  // initial={{ opacity: 0 }}
+                  whileInView={{
+                    // x: [-10, 0],
+                    // opacity: [0, 1],
+                    scale: [1.1, 1],
+                  }}
+                  transition={{ duration: 8 }}
+                  // animate={{ opacity: 1 }}
+                  // exit={{
+                  //   scale: [1, 1.01, 1, 0.9, 1],
+                  //   rotate: [0, 1, 0, -1, 0],
+                  //   delay: 3,
+                  // }}
+                  // exit={{ opacity: 0.5 }}
+                  src={slide.image}
+                  alt="slide"
+                  className="slider-image"
+                />
+                <motion.div
+                  whileInView={{ y: [100, 0], opacity: [0, 1] }}
+                  transition={{ duration: 1, delay: 0.5 }}
+                  className="content"
+                >
                   <div className="slide-heading">{slide.heading}</div>
-                  <div>{slide.description}</div>
+                  <motion.div
+                    whileInView={{ opacity: [0, 1] }}
+                    transition={{ duration: 0.5, delay: 1 }}
+                    className="slide-desc"
+                  >
+                    {slide.description}
+                  </motion.div>
                   {/* <a href={slide.link} target="_blank" rel="noreferrer"> */}
-                  <a href={slide.link}>
-                    <div className="btn-container">
-                      <span className="circle-btn" />
+
+                  <motion.div
+                    whileInView={{ opacity: [0, 1] }}
+                    transition={{ duration: 0.5, delay: 1 }}
+                    className="btn-container"
+                  >
+                    <a href={slide.link} className="slide-link">
+                      <motion.span
+                        whileInView={{ opacity: [0, 1], scale: [0, 1] }}
+                        transition={{ duration: 1, delay: 1.5 }}
+                        className="circle-btn"
+                      />
                       <motion.span
                         whileInView={{ x: [-10, 0], opacity: [0, 1] }}
-                        transition={{ duration: 0.5, delay: 0.5 }}
+                        transition={{ duration: 0.85, delay: 2.25 }}
+                        className="arrow-btn-container"
                       >
                         <BsArrowRight className="arrow-btn" />
                       </motion.span>
                       <motion.span
                         whileInView={{ x: [-10, 0], opacity: [0, 1] }}
-                        transition={{ duration: 0.5, delay: 1 }}
+                        transition={{ duration: 0.5, delay: 3 }}
                         className="btn-text"
                       >
                         {slide.action}
                       </motion.span>
-                    </div>
-                  </a>
-                </div>
+                    </a>
+                  </motion.div>
+                </motion.div>
               </div>
             )}
           </div>

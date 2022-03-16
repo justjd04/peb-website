@@ -2,7 +2,7 @@ import { dbAssets } from "./dbAssets";
 
 export default [
   {
-    heading: "Nothing is impossible, the words itself says 'I'm possible'.",
+    heading: 'Nothing is impossible, the words itself says "I\'m possible."',
     description:
       "PEB Training and Review offers a comprehensive review program.",
     link: "#about",
