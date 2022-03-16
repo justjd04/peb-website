@@ -104,7 +104,7 @@
   justify-content: center;
   align-items: center;
   background-color: var(--secondary-color);
-  z-index: 99;
+  // z-index: 99;
 
   svg {
     width: 70%;
@@ -116,10 +116,11 @@
     position: fixed;
     top: 0;
     right: 0;
-    // z-index: 99 !important;
+    z-index: 99 !important;
     padding: 1rem;
+    opacity: 0;
 
-    width: 70%;
+    width: 50%;
     height: 100vh;
 
     display: flex;
@@ -165,6 +166,7 @@
           font-weight: 500;
 
           transition: all 0.3s ease-in-out;
+          // z-index: 5;
 
           &:hover {
             color: var(--secondary-color);
