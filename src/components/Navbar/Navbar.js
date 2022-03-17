@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import { HiMenuAlt4, HiX } from "react-icons/hi";
 import { motion } from "framer-motion";
 
-import { images } from "../../constants";
+// import { images } from "../../constants";
+import logo from "../../assets/logo.png";
 import "./Navbar.scss";
 
 const Navbar = () => {
@@ -21,15 +22,17 @@ const Navbar = () => {
   return (
     <nav className={navbar ? "app__navbar active" : "app__navbar"}>
       <div className="app__navbar-logo">
-        <img src={images.logo} alt="logo" />
+        <img src={logo} alt="logo" />
       </div>
       <ul className="app__navbar-links">
-        {["home", "about", "prc", "stories", "contact"].map((item) => (
-          <li className="app__flex p-text" key={`link-${item}`}>
-            <div />
-            <a href={`#${item}`}>{item}</a>
-          </li>
-        ))}
+        {["home", "about", "stories", "prc", "testimonial", "contact"].map(
+          (item) => (
+            <li className="app__flex p-text" key={`link-${item}`}>
+              <div />
+              <a href={`#${item}`}>{item}</a>
+            </li>
+          )
+        )}
       </ul>
 
       <div className="app__navbar-menu">
@@ -44,7 +47,14 @@ const Navbar = () => {
           >
             <HiX className="menu-icon" onClick={() => setToggle(false)} />
             <ul>
-              {["home", "about", "prc", "stories", "contact"].map((item) => (
+              {[
+                "home",
+                "about",
+                "stories",
+                "prc",
+                "testimonial",
+                "contact",
+              ].map((item) => (
                 <li key={item}>
                   <a href={`#${item}`} onClick={() => setToggle(false)}>
                     {item}

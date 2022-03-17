@@ -1,58 +1,54 @@
 import React, { useState } from "react";
 
-import { images } from "../../constants";
+// import { images } from "../../constants";
+import emails from "../../assets/emails.png";
+import mobile from "../../assets/mobile.png";
 import { AppWrap, MotionWrap } from "../../wrapper";
 // import { client } from "../../client";
 import "./Footer.scss";
 
 const Footer = () => {
-  // const [formData, setFormData] = useState({
-  //   name: "",
-  //   email: "",
-  //   message: "",
-  // });
-  // const [isFormSubmitted, setIsFormSubmitted] = useState(false);
-  // const [loading, setLoading] = useState(false);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+  const [isFormSubmitted, setIsFormSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
 
-  // const { username, email, message } = formData;
+  const { username, email, message } = formData;
 
-  // const handleChangeInput = (e) => {
-  //   const { name, value } = e.target;
-  //   setFormData({ ...formData, [name]: value });
-  // };
+  const handleChangeInput = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
 
-  // const handleSubmit = () => {
-  //   setLoading(true);
+  const handleSubmit = () => {
+    setLoading(true);
 
-  //   const contact = {
-  //     _type: "contact",
-  //     name: formData.username,
-  //     email: formData.email,
-  //     message: formData.message,
-  //   };
+    // const contact = {
+    //   _type: "contact",
+    //   name: formData.username,
+    //   email: formData.email,
+    //   message: formData.message,
+    // };
 
-  //   client
-  //     .create(contact)
-  //     .then(() => {
-  //       setLoading(false);
-  //       setIsFormSubmitted(true);
-  //     })
-  //     .catch((err) => console.log(err));
-  // };
+    setLoading(false);
+    setIsFormSubmitted(true);
+  };
 
   return (
     <>
-      {/* <h2 className="head-text">Contact Us</h2>
-
+      <h2 className="head-text">Contact Us</h2>
       <div className="app__footer-cards">
         <div className="app__footer-card ">
-          <img src={images.email} alt="email" />
+          <img src={emails} alt="email" />
           <a href="pebreviewcenter@gmail.com" className="p-text">
             pebreviewcenter@gmail.com
           </a>
         </div>
         <div className="app__footer-card">
-          <img src={images.mobile} alt="phone" />
+          <img src={mobile} alt="phone" />
           <a href="tel:+1 (123) 456-7890" className="p-text">
             +1 (123) 456-7890
           </a>
@@ -97,8 +93,7 @@ const Footer = () => {
         <div>
           <h3 className="head-text">Thank you for getting in touch!</h3>
         </div>
-      )} */}
-      Contact
+      )}
     </>
   );
 };

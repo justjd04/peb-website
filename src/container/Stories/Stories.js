@@ -10,7 +10,7 @@ import { AppWrap, MotionWrap } from "../../wrapper";
 // import { urlFor, client } from "../../client";
 
 import iframes from "./iframes";
-import fb from "./fb.svg";
+import fb from "../../assets/fb.svg";
 import { storiesData } from "../../db";
 
 function Iframe(props) {
@@ -23,9 +23,9 @@ function Iframe(props) {
 
 const cardVariants: Variants = {
   offscreen: {
-    y: 200,
+    y: 100,
     scale: 0.8,
-    rotate: -10,
+    rotate: -5,
   },
   onscreen: {
     y: 0,
