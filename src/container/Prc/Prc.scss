@@ -7,18 +7,58 @@
 .app__profiles {
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   flex-wrap: wrap;
   margin-top: 2rem;
+  text-align: center;
+}
+
+.prc-title {
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--black-color);
+  text-align: center;
+
+  @media screen and (min-width: 2000px) {
+    font-size: 2rem;
+  }
+
+  @media screen and (max-width: 450px) {
+    font-size: 0.9rem;
+  }
+}
+
+.prc-desc-text {
+  font-size: 0.8rem;
+  text-align: center;
+  color: var(--gray-color);
+  line-height: 1.5;
+
+  @media screen and (min-width: 2000px) {
+    font-size: 1.75rem;
+  }
 }
 
 .app__profile-item {
   width: 190px;
+  border-radius: 20px;
   display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
   flex-direction: column;
   margin: 2rem;
+  padding-bottom: 10px;
+
+  // background-color: rgb(68, 68, 68); /* Needed for IEs */
+
+  -moz-box-shadow: 5px 5px 5px rgba(68, 68, 68, 0.6);
+  -webkit-box-shadow: 5px 5px 5px rgba(68, 68, 68, 0.6);
+  box-shadow: 5px 5px 5px rgba(68, 68, 68, 0.6);
+
+  filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius=3,MakeShadow=true,ShadowOpacity=0.30);
+  -ms-filter: "progid:DXImageTransform.Microsoft.Blur(PixelRadius=3,MakeShadow=true,ShadowOpacity=0.30)";
+  zoom: 1;
 
   img {
     width: 100%;
@@ -35,4 +75,27 @@
       height: 320px;
     }
   }
+}
+
+.go-to-prc {
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+  &:hover {
+    transform: scale(1.1);
+    color: #6060ff;
+  }
+}
+.prc-ext-link {
+  font-size: 14px;
+}
+
+a:active {
+  color: #0000ff;
 }

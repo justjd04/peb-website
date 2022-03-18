@@ -5,6 +5,7 @@ import { AppWrap, MotionWrap } from "../../wrapper";
 // import { urlFor, client } from "../../client";
 import "./Prc.scss";
 import { prcData } from "../../db";
+import { FaExternalLinkSquareAlt } from "react-icons/fa";
 
 const Prc = () => {
   return (
@@ -23,14 +24,20 @@ const Prc = () => {
             key={prc.title + index}
           >
             <img src={prc.image} alt={prc.title} />
-            <h2 className="bold-text" style={{ marginTop: 20 }}>
+            <h2 className="prc-title" style={{ marginTop: 20 }}>
               {prc.title}
             </h2>
-            <p className="p-text" style={{ marginTop: 10 }}>
+            <p className="prc-desc-text" style={{ marginTop: 10 }}>
               {prc.description}
             </p>
-            <a href={prcData.link} target="_blank" rel="noreferrer">
-              Go to PRC website
+            <a
+              href={prc.link}
+              target="_blank"
+              rel="noreferrer"
+              className="go-to-prc"
+            >
+              Go to PRC website{" "}
+              <FaExternalLinkSquareAlt className="prc-ext-link" />
             </a>
           </motion.div>
         ))}

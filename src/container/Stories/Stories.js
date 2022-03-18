@@ -6,6 +6,7 @@ import { BsArrowRight } from "react-icons/bs";
 import { MdNavigateBefore, MdNavigateNext } from "react-icons/md";
 import { motion } from "framer-motion";
 import { AppWrap, MotionWrap } from "../../wrapper";
+import { GrFacebookOption } from "react-icons/gr";
 
 // import { urlFor, client } from "../../client";
 
@@ -91,44 +92,51 @@ const Stories = () => {
             ref={constraintsRef}
             className="stories-carousel"
           >
-            <motion.div
-              drag="x"
-              whileInView={{ x: [-700, 0], opacity: [0, 1] }}
-              transition={{ duration: 2 }}
-              // drag
-              // dragConstraints={{ right: 0, left: -width }}
-              // dragConstraints={{ right: 0, left: -test }}
-              dragConstraints={constraintsRef}
-              // dragConstraints={{ right: 0 }}
-              className="stories-inner-carousel"
-              ref={constraintsRef}
-            >
-              {storiesData.map((storiesData, index) => {
-                return (
-                  <motion.div
-                    // initial={{ opacity: 0, scale: 0.8 }}
-                    // whileInView={{ opacity: 1 }}
-                    whileHover={{ scale: 0.85 }}
-                    whileTap={{ scale: 0.85 }}
-                    variants={cardVariants}
-                    initial="offscreen"
-                    whileInView="onscreen"
-                    // viewport={{ once: true }}
-                    key={index}
-                    className="stories-item"
-                  >
-                    <Iframe
-                      iframe={storiesData.post}
-                      allow="autoplay"
-                      className="stories-item-iframe"
-                    />
-                    <a href={storiesData.link} target="_blank" rel="noreferrer">
-                      <img src={fb} className="stories-item-icon" />
-                    </a>
-                  </motion.div>
-                );
-              })}
-            </motion.div>
+            <div className="carousel-wrap">
+              <motion.div
+                drag="x"
+                whileInView={{ x: [-700, 0], opacity: [0, 1] }}
+                transition={{ duration: 2 }}
+                // drag
+                // dragConstraints={{ right: 0, left: -width }}
+                // dragConstraints={{ right: 0, left: -test }}
+                dragConstraints={constraintsRef}
+                // dragConstraints={{ right: 0 }}
+                className="stories-inner-carousel"
+                ref={constraintsRef}
+              >
+                {storiesData.map((storiesData, index) => {
+                  return (
+                    <motion.div
+                      // initial={{ opacity: 0, scale: 0.8 }}
+                      // whileInView={{ opacity: 1 }}
+                      whileHover={{ scale: 0.85 }}
+                      whileTap={{ scale: 0.85 }}
+                      variants={cardVariants}
+                      initial="offscreen"
+                      whileInView="onscreen"
+                      // viewport={{ once: true }}
+                      key={index}
+                      className="stories-item"
+                    >
+                      <Iframe
+                        iframe={storiesData.post}
+                        allow="autoplay"
+                        className="stories-item-iframe"
+                      />
+
+                      <a
+                        href={storiesData.link}
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        <GrFacebookOption className="stories-item-icon" />
+                      </a>
+                    </motion.div>
+                  );
+                })}
+              </motion.div>
+            </div>
           </motion.div>
         </div>
       </div>
@@ -177,26 +185,3 @@ export default AppWrap(
   "stories",
   "app__primarybg"
 );
-
-{
-  /* <div className="slider">
-        <MdNavigateBefore className="arrow prev" onClick={prevSlide} />
-        <MdNavigateNext className="arrow next" onClick={nextSlide} />
-        {stories.map((stories, index) => {
-          return (
-            <div
-              className={index === currentSlide ? "slide current" : "slide"}
-              key={index}
-            >
-              {index === currentSlide && (
-                <div className="container">
-                  <div>
-                    <Iframe iframe={stories.post} />, ,
-                  </div>
-                </div>
-              )}
-            </div>
-          );
-        })}
-      </div> */
-}
