@@ -22,7 +22,7 @@ const Navbar = () => {
   return (
     <nav className={navbar ? "app__navbar active" : "app__navbar"}>
       <div className="app__navbar-logo">
-        <a href="/">
+        <a href="#home">
           <img src={logo} alt="logo" />
         </a>
       </div>
