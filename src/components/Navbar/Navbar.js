@@ -22,7 +22,9 @@ const Navbar = () => {
   return (
     <nav className={navbar ? "app__navbar active" : "app__navbar"}>
       <div className="app__navbar-logo">
-        <img src={logo} alt="logo" />
+        <a href="/">
+          <img src={logo} alt="logo" />
+        </a>
       </div>
       <ul className="app__navbar-links">
         {["home", "about", "stories", "prc", "testimonial", "contact"].map(
