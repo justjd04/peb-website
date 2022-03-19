@@ -116,7 +116,7 @@ const Footer = () => {
         <div className="peb-footer">PEB Review and Training</div>
         <div>peb.acads@gmail.com</div>
         <div>0923-575-1844</div>
-        <div>
+        {/* <div>
           <a
             href="https://www.google.com/maps/dir/10.3043304,123.9192443/10.68498,122.98469/@10.5132592,122.8654893,9z/data=!3m1!4b1!4m4!4m3!1m1!4e1!1m0"
             target="_blank"
@@ -125,9 +125,9 @@ const Footer = () => {
           >
             Bacolod City
           </a>
-        </div>
+        </div> */}
         <div>
-          <span>
+          <span className="footer-icons">
             <a
               href="https://web.facebook.com/PEBacads"
               target="_blank"
