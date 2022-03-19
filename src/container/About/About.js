@@ -42,7 +42,7 @@ const About = () => {
         {[
           "Chemical Engineering",
           "Mechanical Engineering",
-          "Electrical Engineering",
+          "Electronics Engineering",
           "Math and Science",
           "All",
         ].map((item, index) => (

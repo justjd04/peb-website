@@ -14,10 +14,10 @@ export default [
     tags: "Mechanical Engineering",
   },
   {
-    title: "Electrical Engineering Review",
-    description: "Electrical Engineering Review",
-    image: dbAssets.elecE,
-    tags: "Electrical Engineering",
+    title: "Electronics Engineering Review",
+    description: "Electronics Engineering Review",
+    image: dbAssets.ece,
+    tags: "Electronics Engineering",
   },
   {
     title: "Math and Science Review",

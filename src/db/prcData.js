@@ -14,9 +14,9 @@ export default [
     link: "https://www.prc.gov.ph/2022-schedule-examination",
   },
   {
-    title: "Electrical Engineering Licensure Exam 2022",
-    description: "Electrical Engineering Board Exam Schedule 2022",
-    image: dbAssets.prcEe,
+    title: "Electronics Engineering Licensure Exam 2022",
+    description: "Electronics Board Exam Schedule 2022",
+    image: dbAssets.prcEce,
     link: "https://www.prc.gov.ph/2022-schedule-examination",
   },
 ];
