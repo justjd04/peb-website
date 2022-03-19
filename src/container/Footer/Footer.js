@@ -22,10 +22,10 @@ const Footer = () => {
 
     emailjs
       .sendForm(
-        process.env.REACT_APP_SERVICE_ID,
-        process.env.REACT_APP_TEMPLATE_ID,
+        "service_uef0hem",
+        "template_ab7xw92",
         form.current,
-        process.env.REACT_APP_USER_ID
+        "Acq4xwSB6GLpy7ZLg"
       )
       .then(
         (result) => {
