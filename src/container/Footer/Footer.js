@@ -80,6 +80,7 @@ const Footer = () => {
               type="text"
               placeholder="Your Name"
               name="name"
+              required
             />
           </div>
           <div className="app__flex">
@@ -88,6 +89,7 @@ const Footer = () => {
               type="email"
               placeholder="Your Email"
               name="email"
+              required
             />
           </div>
           <div>
@@ -95,6 +97,7 @@ const Footer = () => {
               className="p-text"
               placeholder="Your Message"
               name="message"
+              required
             />
           </div>
           <input
